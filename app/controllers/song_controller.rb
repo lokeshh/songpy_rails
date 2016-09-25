@@ -9,6 +9,8 @@ class SongController < ActionController::Base
   end
   
   def download
+    `sudo pip install youtube-dl`
+    `sudo pip install BeautifulSoup`    
     path = Rails.root.join('app', 'helpers', 'songpy', 'songpy.py')
     url = `python2 #{path} #{params[:name]}`
     # debugger
