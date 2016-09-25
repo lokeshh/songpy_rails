@@ -1,3 +1,5 @@
+require 'open-uri'
+
 class SongController < ActionController::Base
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
@@ -8,6 +10,9 @@ class SongController < ActionController::Base
   
   def download
     path = Rails.root.join('app', 'helpers', 'songpy', 'songpy.py')
-    redirect_to `python2 #{path} #{params[:name]}`
+    url = `python2 #{path} #{params[:name]}`
+    # debugger
+    data = open url
+    send_data data.read, filename: "#{params[:name]}.webm", type: 'application/webm', disposition: 'inline'
   end
 end
