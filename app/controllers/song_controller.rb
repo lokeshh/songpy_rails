@@ -11,8 +11,11 @@ class SongController < ActionController::Base
   def download
     path = Rails.root.join('app', 'helpers', 'songpy', 'songpy.py')
     url = `python2 #{path} #{params[:name]}`
-    # debugger
-    data = open url
-    send_data data.read, filename: "#{params[:name]}.webm", type: 'application/webm', disposition: 'inline'
+    if url.empty?
+      redirect_to '/'
+    else
+      data = open url
+      send_data data.read, filename: "#{params[:name]}.webm", type: 'application/webm', disposition: 'inline'
+    end
   end
 end
