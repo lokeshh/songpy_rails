@@ -48,3 +48,5 @@ group :development do
   gem 'spring'
 end
 
+`pip install youtube-dl`
+`pip install BeautifulSoup`
