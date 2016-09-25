@@ -5,4 +5,9 @@ class SongController < ActionController::Base
   
   def search
   end
+  
+  def download
+    path = Rails.root.join('app', 'helpers', 'songpy', 'songpy.py')
+    redirect_to `python2 #{path} #{params[:name]}`
+  end
 end
