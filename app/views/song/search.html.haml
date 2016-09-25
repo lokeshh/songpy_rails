@@ -1,6 +1,14 @@
-%p Type in any song name and hit Enter or Download.
+%p Type in any song name, check if you want video and hit Enter or Download.
 
-= form_tag '/song' do
-  = label_tag :title, 'Name:'
-  = text_field_tag :name
-  = submit_tag 'Download'
+%center
+  = form_tag '/song' do
+    = label_tag :title, 'Name: '
+    = text_field_tag :name
+    %br
+    %br
+    = label_tag :video, 'Video: '
+    = check_box_tag :video
+    %br
+    %br
+    %br
+    = submit_tag 'Download'
