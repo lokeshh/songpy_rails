@@ -12,7 +12,7 @@ else:
 	video = False
 
 song_name = ' '.join(sys.argv)
-result = search(song_name).next()
+result = search(song_name + ' Youtube').next()
 if video:
 	system('youtube-dl -s -g ' + result)
 else:
