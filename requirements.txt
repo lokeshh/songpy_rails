@@ -1,2 +1,2 @@
 BeautifulSoup
-youtube-dl == 2017.02.16
+youtube-dl == 2017.05.26
