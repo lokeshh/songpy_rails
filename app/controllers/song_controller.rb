@@ -21,7 +21,7 @@ class SongController < ActionController::Base
     if url.empty?
       redirect_to '/'
     else
-      data = open url
+      data = open "#{url}"
       send_data data.read, filename: "#{name}.webm", type: 'application/webm', disposition: 'inline'
     end
   end
