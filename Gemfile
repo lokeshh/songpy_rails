@@ -1,8 +1,8 @@
 source 'https://rubygems.org'
-
+ruby '2.5.5'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.2.5'
+gem 'rails', '4.2.11'
 
 gem 'pg'
 # Use SCSS for stylesheets
@@ -37,7 +37,7 @@ gem 'haml'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
-  gem 'sqlite3'
+  gem 'sqlite3', '~> 1.3.11'
 end
 
 group :development do
