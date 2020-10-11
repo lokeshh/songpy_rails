@@ -1,4 +1,4 @@
-#!/usr/bin/env python2.7
+#!/usr/bin/env 
 
 from google import search
 from os import system
@@ -12,10 +12,8 @@ else:
 	video = False
 
 song_name = ' '.join(sys.argv)
-result = search(song_name + ' Youtube').next()
+result = next(search(song_name + ' Youtube'))
 if video:
 	system('youtube-dl -s -g ' + result)
 else:
 	system('youtube-dl -f bestaudio -s -g ' + result)
-
-
